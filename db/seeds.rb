@@ -1,14 +1,14 @@
 puts 'Cleaning database...'
-Users.destroy_all
-Bike.destroy_all
-Booking.destroy_all
 Review.destroy_all
+Booking.destroy_all
+Bike.destroy_all
+User.destroy_all
 
 puts 'Creating users...'
 users_attributes = [
   {
     email: "dave@gmail.com",
-    password: "123",
+    password: "123456",
     first_name: "Dave",
     last_name: "Jones",
     username: "DJ1",
@@ -16,7 +16,7 @@ users_attributes = [
   },
   {
     email: "Johnny@hotmail.com",
-    password: "456",
+    password: "456789",
     first_name: "Johnno",
     last_name: "Squirmo",
     username: "Sandpaper",
@@ -24,7 +24,7 @@ users_attributes = [
   },
   {
     email: "ant@yahoo.com",
-    password: "789",
+    password: "789012",
     first_name: "Ant",
     last_name: "Hero",
     username: "DatGuy",
@@ -32,7 +32,7 @@ users_attributes = [
   },
   {
     email: "fred_fr@gmail.fr",
-    password: "123",
+    password: "123456",
     first_name: "Fredro",
     last_name: "Frank",
     username: "FreddyFresh",
@@ -40,7 +40,7 @@ users_attributes = [
   },
   {
     email: "zapz@hotmail.co.uk",
-    password: "456",
+    password: "456789",
     first_name: "Zac",
     last_name: "Smith",
     username: "ZacAttack",
@@ -54,67 +54,73 @@ bikes_attributes = [
     make: "Pinarello",
     model: "PR-2",
     color: "Red",
-    type: "Performance",
-    description: "Fast and lightweight"
+    bike_type: "crmance",
+    description: "Fast and lightweight",
     frame_size: "Medium",
     foldable: false,
     location: "Camberwell",
     owner_id: 1,
+    price: 10
   },
   {
     make: "Eddy Merckx",
     model: "XR-23",
     color: "Green",
-    type: "Endurance",
-    description: "Wide tires"
+    bike_type: "Endurance",
+    description: "Wide tires",
     frame_size: "Large",
     foldable: true,
     location: "Hoxton",
     owner_id: 2,
+    price: 8
   },
   {
     make: "BMC",
     model: "Francis",
     color: "Blue",
-    type: "Mountain",
-    description: "Durable"
+    bike_type: "Mountain",
+    description: "Durable",
     frame_size: "Medium",
     foldable: false,
     location: "Croydon",
     owner_id: 3,
+    price: 15
   },
   {
     make: "Trek",
     model: "Avalanche",
     color: "White",
-    type: "BMX",
-    description: "Very light"
+    bike_type: "BMX",
+    description: "Very light",
     frame_size: "Small",
     foldable: false,
     location: "Hounslow",
     owner_id: 4,
+    price: 19
   },
   {
     make: "Giant",
     model: "Polstov",
     color: "Yellow",
-    type: "Mountain",
-    description: "Heavy"
+    bike_type: "Mountain",
+    description: "Heavy",
     frame_size: "Large",
     foldable: false,
     location: "Wembley",
     owner_id: 5,
+    price: 5
   },
   {
     make: "Focus",
     model: "Speedster",
     color: "Black",
-    type: "Commuter",
-    description: "very small and light"
+    bike_type: "Commuter",
+    description: "very small and light",
     frame_size: "small",
     foldable: true,
     location: "Enfield",
     owner_id: 5,
+    price: 16
   },
 ]
 
@@ -151,20 +157,17 @@ reviews_attributes = [
   {
     stars: 4,
     description: "Good bike",
-    bike_id: 1,
-    rider_id: 3
+    booking_id: 1
   },
   {
     stars: 2,
     description: "Not in great condition",
-    bike_id: 2,
-    rider_id: 5
+    booking_id: 3
   },
   {
     stars: 5,
     description: "Great ride, thanks.",
-    bike_id: 5,
-    rider_id: 1
+    booking_id: 2
   }
 ]
 
