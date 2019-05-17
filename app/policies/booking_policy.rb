@@ -10,10 +10,16 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    user?
   end
 
   def destroy?
+    user?
+  end
+
+  private
+
+  def user?
     record.user == user
   end
 end
