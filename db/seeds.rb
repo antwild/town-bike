@@ -1,5 +1,8 @@
 puts 'Cleaning database...'
 Users.destroy_all
+Bike.destroy_all
+Booking.destroy_all
+Review.destroy_all
 
 puts 'Creating users...'
 users_attributes = [
@@ -115,6 +118,59 @@ bikes_attributes = [
   },
 ]
 
+puts 'Creating bookings...'
+bookings_attributes = [
+  {
+    bike_id: 1,
+    start_date: "20 May 2019",
+    end_date: "22 May 2019",
+    rider_id: 3
+  },
+  {
+    bike_id: 4,
+    start_date: "10 Apr 2019",
+    end_date: "01 May 2019",
+    rider_id: 2
+  },
+  {
+    bike_id: 5,
+    start_date: "03 Mar 2019",
+    end_date: "13 Mar 2019",
+    rider_id: 4
+  },
+  {
+    bike_id: 5,
+    start_date: "01 Jan 2019",
+    end_date: "20 Jan 2019",
+    rider_id: 1
+  }
+]
+
+puts 'Creating reviews...'
+reviews_attributes = [
+  {
+    stars: 4,
+    description: "Good bike",
+    bike_id: 1,
+    rider_id: 3
+  },
+  {
+    stars: 2,
+    description: "Not in great condition",
+    bike_id: 2,
+    rider_id: 5
+  },
+  {
+    stars: 5,
+    description: "Great ride, thanks.",
+    bike_id: 5,
+    rider_id: 1
+  }
+]
+
 User.create!(users_attributes)
 Bike.create!(bikes_attributes)
+Booking.create!(bookings_attributes)
+Review.create!(reviews_attributes)
+
 puts 'Finished!'
