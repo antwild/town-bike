@@ -1,5 +1,6 @@
 class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :create, :update]
+  has_many :reviews, dependent: :destroy
   def index
     @bikes = Bike.all
   end
