@@ -3,9 +3,16 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :bikes
-  has_many :bookings
+
+# owner
+  has_many :bikes, foreign_key: :owner_id
+  has_many :bookings, through: :bikes
   has_many :reviews, through: :bookings
+
+
+# rider
+  has_many :bookings, foreign_key: :rider_id
+  has_many :reviews, through: :booking
   validates :email, presence: true, uniqueness: true
   validates_format_of :email, :with => Devise::email_regexp
   validates :username, presence: true, uniqueness: true
