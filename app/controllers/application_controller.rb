@@ -1,5 +1,14 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  # JR - add first_name, last_name at signup
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  def configure_permitted_parameters
+    # For additional fields in app/views/devise/registrations/new.html.erb
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :username, :about_me])
+    # For additional in app/views/devise/registrations/edit.html.erb
+    devise_parameter_sanitizer.permit(:account_update, keys: [:about_me])
+  end
+  # Pundit methods
   include Pundit
 
   # Pundit: white-list approach.
