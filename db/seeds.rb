@@ -3,7 +3,7 @@ Review.destroy_all
 Booking.destroy_all
 Bike.destroy_all
 User.destroy_all
-# Bike.create!(description: "decent", make: "Ford", model: "Focus", color: "Red", bike_type: "Performance", frame_size: "small", foldable: true, location: "London", owner_id: 1)
+
 puts 'Creating users...'
 users_attributes = [
   {
@@ -173,7 +173,7 @@ reviews_attributes = [
   }
 ]
 
-User.create(users_attributes)
+User.create!(users_attributes)
 puts "Users created"
 Bike.create!(bikes_attributes)
 puts "Bikes created"
