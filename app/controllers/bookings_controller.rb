@@ -11,20 +11,24 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.save
+    authorize @booking
   end
 
   def edit
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
+    authorize @booking
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
+    authorize @booking
   end
 
   private
