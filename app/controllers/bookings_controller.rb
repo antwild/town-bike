@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
-  before_action :set_bookings, only: [:edit, :destroy, :update]
+  before_action :set_bookings, only: [:show, :edit, :update, :destroy]
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
   def new
@@ -10,20 +10,27 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.save
+    @booking.user = user
+    authorize @booking
+    if @booking.save
+      redirect_to @booking
+    else
+      format.html { render :new }
+    end
   end
 
   def edit
-    @booking = Booking.find(params[:id])
   end
 
   def update
-    @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
+    if @booking.update(booking_params)
+      redirect_to @booking
+    else
+      format.html { render :edit }
+    end
   end
 
   def destroy
-    @booking = Booking.find(params[:id])
     @booking.destroy
   end
 
@@ -31,6 +38,7 @@ class BookingsController < ApplicationController
 
   def set_bookings
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def bookig_params
