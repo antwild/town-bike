@@ -4,7 +4,7 @@ class Bike < ApplicationRecord
   validates :make, presence: true
   validates :model, presence: true
   validates :color, presence: true
-  validates :type, presence: true
+  validates :bike_type, presence: true
   validates :frame_size, presence: true
   validates :foldable, presence: true
   validates :location, presence: true
