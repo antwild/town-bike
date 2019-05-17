@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_16_171807) do
+ActiveRecord::Schema.define(version: 2019_05_17_115932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,13 +20,14 @@ ActiveRecord::Schema.define(version: 2019_05_16_171807) do
     t.string "make"
     t.string "model"
     t.string "color"
-    t.string "type"
+    t.string "bike_type"
     t.string "frame_size"
     t.boolean "foldable"
     t.string "location"
     t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price"
     t.index ["owner_id"], name: "index_bikes_on_owner_id"
   end
 
@@ -44,12 +45,10 @@ ActiveRecord::Schema.define(version: 2019_05_16_171807) do
   create_table "reviews", force: :cascade do |t|
     t.integer "stars"
     t.text "description"
-    t.bigint "bike_id"
-    t.bigint "rider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bike_id"], name: "index_reviews_on_bike_id"
-    t.index ["rider_id"], name: "index_reviews_on_rider_id"
+    t.bigint "booking_id"
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,6 +70,5 @@ ActiveRecord::Schema.define(version: 2019_05_16_171807) do
   add_foreign_key "bikes", "users", column: "owner_id"
   add_foreign_key "bookings", "bikes"
   add_foreign_key "bookings", "users", column: "rider_id"
-  add_foreign_key "reviews", "bikes"
-  add_foreign_key "reviews", "users", column: "rider_id"
+  add_foreign_key "reviews", "bookings"
 end
