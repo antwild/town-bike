@@ -9,6 +9,7 @@ class BikesController < ApplicationController
 
   def new
     @bike = Bike.new
+    authorize @bike
   end
 
   def create
