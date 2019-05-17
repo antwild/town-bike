@@ -3,12 +3,13 @@ Review.destroy_all
 Booking.destroy_all
 Bike.destroy_all
 User.destroy_all
-
+# Bike.create!(description: "decent", make: "Ford", model: "Focus", color: "Red", bike_type: "Performance", frame_size: "small", foldable: true, location: "London", owner_id: 1)
 puts 'Creating users...'
 users_attributes = [
   {
     email: "dave@gmail.com",
     password: "123456",
+    password_confirmation: "123456",
     first_name: "Dave",
     last_name: "Jones",
     username: "DJ1",
@@ -41,6 +42,7 @@ users_attributes = [
   {
     email: "zapz@hotmail.co.uk",
     password: "456789",
+    password_confirmation: "456789",
     first_name: "Zac",
     last_name: "Smith",
     username: "ZacAttack",
@@ -171,9 +173,14 @@ reviews_attributes = [
   }
 ]
 
-User.create!(users_attributes)
+User.create(users_attributes)
+puts "Users created"
 Bike.create!(bikes_attributes)
+puts "Bikes created"
 Booking.create!(bookings_attributes)
+puts "Bookings created"
 Review.create!(reviews_attributes)
+puts "Reviews created"
 
 puts 'Finished!'
+
