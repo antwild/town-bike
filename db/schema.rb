@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_17_113055) do
+ActiveRecord::Schema.define(version: 2019_05_17_115932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,13 +20,14 @@ ActiveRecord::Schema.define(version: 2019_05_17_113055) do
     t.string "make"
     t.string "model"
     t.string "color"
-    t.string "type"
+    t.string "bike_type"
     t.string "frame_size"
     t.boolean "foldable"
     t.string "location"
     t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price"
     t.index ["owner_id"], name: "index_bikes_on_owner_id"
   end
 
