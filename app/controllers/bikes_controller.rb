@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-  before_action :set_bike, only: [:show, :create, :edit, :update, :destroy]
+  before_action :set_bike, only: [:show, :edit, :update, :destroy]
   def index
     @bikes = policy_scope(Bike).order(created_at: :desc)
   end
@@ -13,8 +13,8 @@ class BikesController < ApplicationController
   end
 
   def create
-    @bikes = Bike.new(bike_params)
-    @bike.user = user
+    @bike = Bike.new(bike_params)
+    @bike.owner = current_user
     authorize @bike
     if @bike.save
       redirect_to @bike
