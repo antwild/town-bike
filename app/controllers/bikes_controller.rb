@@ -1,7 +1,7 @@
 class BikesController < ApplicationController
-  before_action :set_bike, only: [:show, :create, :update]
+  before_action :set_bike, only: [:show, :edit, :update, :destroy]
   def index
-    @bikes = Bike.all
+    @bikes = policy_scope(Bike).order(created_at: :desc)
   end
 
   def show
@@ -9,24 +9,32 @@ class BikesController < ApplicationController
 
   def new
     @bike = Bike.new
+    authorize @bike
   end
 
   def create
     @bike = Bike.new(bike_params)
-    @bike.save
+    @bike.owner = current_user
+    authorize @bike
+    if @bike.save
+      redirect_to @bike
+    else
+      format.html { render :new }
+    end
   end
 
   def edit
-    @bike = Bike.find(params[:id])
   end
 
   def update
-    @bike = Bike.find(params[:id])
-    @bike.update(bike_params)
+    if @bike.update(bike_params)
+      redirect_to @bike
+    else
+      format.html { render :edit }
+    end
   end
 
   def destroy
-    @bike = Bike.find(params[:id])
     @bike.destroy
   end
 
@@ -34,6 +42,7 @@ class BikesController < ApplicationController
 
   def set_bike
     @bike = Bike.find(params[:id])
+    authorize @bike
   end
 
   def bike_params
