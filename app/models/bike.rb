@@ -6,6 +6,5 @@ class Bike < ApplicationRecord
   validates :color, presence: true
   validates :bike_type, presence: true
   validates :frame_size, presence: true
-  validates :foldable, presence: true
   validates :location, presence: true
 end
