@@ -5,21 +5,25 @@ class BikePolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    true
+  end
+
   def create?
-    return true
+    true
   end
 
   def update?
-    user?
+    user_owner_or_admin?
   end
 
   def destroy?
-    user?
+    user_owner_or_admin?
   end
 
   private
 
-  def user?
-    record.user == user
+  def user_owner_or_admin?
+    record.user == user || user.admin
   end
 end
