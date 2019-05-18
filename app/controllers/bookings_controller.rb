@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_bookings, only: [:show, :edit, :update, :destroy]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy]
   def index
     @bookings = policy_scope(Booking).order(created_at: :desc)
   end
@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
 
   private
 
-  def set_bookings
+  def set_booking
     @booking = Booking.find(params[:id])
     authorize @booking
   end
