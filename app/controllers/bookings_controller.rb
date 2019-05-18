@@ -41,7 +41,7 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
-  def bookig_params
+  def booking_params
     params.require(:booking).permit(:bike_id, :start_date, :end_date, :rider_id)
   end
 end
