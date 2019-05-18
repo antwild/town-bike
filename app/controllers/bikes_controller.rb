@@ -1,6 +1,6 @@
 class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
-  there is no root for this Action??? we only have pages#home for the root
+  # there is no root for this Action??? we only have pages#home for the root
   def index
     @bikes = policy_scope(Bike).order(created_at: :desc)
   end
