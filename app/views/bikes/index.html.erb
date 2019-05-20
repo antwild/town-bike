@@ -5,8 +5,8 @@
   </div>
 </div>
 
-
 <div class="container">
+
   <h2>Popular Categories</h2>
   <div class="cards-rec">
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1544714097-0a9c4a18f4b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
@@ -80,6 +80,35 @@
         <h2 class="card-trip-pricing"> <%= "£#{bike.price} per day" %></h2>
         <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
       </div>
+      
+  <% @bikes.each do |bike| %>
+    <div class="card border-bottom">
+
+      <p><strong><%= link_to "Bike", bike_url(bike) %></strong></p>
+      <p>
+       id: <%= bike.id %>
+       make: <%= bike.make %>
+       model: <%= bike.model %>
+       | owner: <%= bike.owner.username %>
+       price: <%= bike.price %>
+       <%= image_tag bike.photo %>
+       </p>
+
+       <% if bike.bookings.size.zero? %>
+         <p>Not ridden yet!</p>
+       <% else %>
+       <p><strong>Ridden By</strong></p>
+         <% bike.bookings.each do |booking| %>
+           <p>Rider: <%= booking.rider.username %>
+            <% if booking.review %>
+              <%= booking.review.stars %>
+            <% else %>
+              <p>No reviews</p>
+            <% end %>
+           </p>
+         <% end %>
+       <% end %>
+
      </div>
     <% end %>
   </div>

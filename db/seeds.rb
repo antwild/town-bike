@@ -13,7 +13,8 @@ users_attributes = [
     first_name: "Dave",
     last_name: "Jones",
     username: "DJ1",
-    about_me: "I'm alright"
+    about_me: "I'm alright",
+    photo: "che.jpeg"
   },
   {
     email: "Johnny@hotmail.com",
@@ -21,7 +22,8 @@ users_attributes = [
     first_name: "Johnno",
     last_name: "Squirmo",
     username: "Sandpaper",
-    about_me: "I'm not from around here"
+    about_me: "I'm not from around here",
+    photo: "jon.jpeg"
   },
   {
     email: "ant@yahoo.com",
@@ -29,7 +31,8 @@ users_attributes = [
     first_name: "Ant",
     last_name: "Hero",
     username: "DatGuy",
-    about_me: "I'm just dat guy"
+    about_me: "I'm just dat guy",
+    photo: "ant.jpg"
   },
   {
     email: "fred_fr@gmail.fr",
@@ -37,7 +40,8 @@ users_attributes = [
     first_name: "Fredro",
     last_name: "Frank",
     username: "FreddyFresh",
-    about_me: "I like cheese"
+    about_me: "I like cheese",
+    photo: "fred.jpeg"
   },
   {
     email: "zapz@hotmail.co.uk",
@@ -46,7 +50,8 @@ users_attributes = [
     first_name: "Zac",
     last_name: "Smith",
     username: "ZacAttack",
-    about_me: "Did someone say vape?"
+    about_me: "Did someone say vape?",
+    photo: "zac.jpeg"
   }
 ]
 
@@ -62,7 +67,8 @@ bikes_attributes = [
     foldable: false,
     location: "Camberwell",
     owner_id: 1,
-    price: 10
+    price: 10,
+    photo: "red.jpg"
   },
   {
     make: "Eddy Merckx",
@@ -74,7 +80,8 @@ bikes_attributes = [
     foldable: true,
     location: "Hoxton",
     owner_id: 2,
-    price: 8
+    price: 8,
+    photo: "green.jpg"
   },
   {
     make: "BMC",
@@ -86,7 +93,8 @@ bikes_attributes = [
     foldable: false,
     location: "Croydon",
     owner_id: 3,
-    price: 15
+    price: 15,
+    photo: "blue.jpeg"
   },
   {
     make: "Trek",
@@ -98,7 +106,8 @@ bikes_attributes = [
     foldable: false,
     location: "Hounslow",
     owner_id: 4,
-    price: 19
+    price: 19,
+    photo: "white.jpg"
   },
   {
     make: "Giant",
@@ -110,7 +119,8 @@ bikes_attributes = [
     foldable: false,
     location: "Wembley",
     owner_id: 5,
-    price: 5
+    price: 5,
+    photo: "yellow.jpg"
   },
   {
     make: "Focus",
@@ -122,7 +132,8 @@ bikes_attributes = [
     foldable: true,
     location: "Enfield",
     owner_id: 5,
-    price: 16
+    price: 16,
+    photo: "black.jpg"
   },
 ]
 

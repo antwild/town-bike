@@ -1,0 +1,22 @@
+$red: #FD1015;
+$blue: #167FFB;
+$orange: #E67E22;
+$gray: #0E0000;
+$light-gray: #F4F4F4;
+$grey: #222326;
+$yellow: #F2EC43;
+$green: #03CEA4;
+
+.book_bike {
+  text-align: center;
+  display: inline;
+}
+
+.book-btn{
+  color: $yellow;
+  border-color: $green;
+  background-color: $green;
+  margin-bottom: 5px;
+  box-shadow: 10px;
+}
+
