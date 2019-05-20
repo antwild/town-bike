@@ -9,4 +9,5 @@ class Bike < ApplicationRecord
   validates :bike_type, presence: true
   validates :frame_size, presence: true
   validates :location, presence: true
+  validates :photo, presence: true
 end
