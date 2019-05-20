@@ -1,0 +1,27 @@
+<!-- show booking data -->
+
+<div class="container">
+  <h1>Your booking!</h1>
+
+  <div class="card-trip">
+    <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="">
+  </div>
+
+</div>
+
+<p>Start: <%= @booking.start_date %></p>
+<p>End: <%= @booking.end_date %></p>
+<p>Owner: <%= @booking.bike.owner.username %></p>
+<h2>Bike Details</h2>
+<p><%= @booking.bike.make %> <%= @booking.bike.model %></p>
+<p>Type: <%= @booking.bike.bike_type %></p>
+
+
+<!-- t.bigint "bike_id"
+t.date "start_date"
+t.date "end_date"
+t.bigint "rider_id"
+t.datetime "created_at", null: false
+t.datetime "updated_at", null: false
+t.index ["bike_id"], name: "index_bookings_on_bike_id"
+t.index ["rider_id"], name: "index_bookings_on_rider_id"

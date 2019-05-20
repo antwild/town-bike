@@ -5,6 +5,7 @@ class BikesController < ApplicationController
     @bikes = policy_scope(Bike).order(created_at: :desc)
   end
   def show
+    rating
   end
 
   def new
@@ -36,6 +37,23 @@ class BikesController < ApplicationController
 
   def destroy
     @bike.destroy
+  end
+
+  def rating
+    reviews = @bike.reviews
+    sum = 0
+    reviews.each do |r|
+      sum += r.stars
+    end
+    if reviews.count.positive?
+      @raw_rating = sum / reviews.count
+      @full_stars = @raw_rating.floor
+      @half_stars = ((@raw_rating * 2).round / 2) - @full_stars
+      @emtpy_stars = 5 - @full_stars - (@half_stars * 2)
+      @rating = { full_stars: @full_stars, half_stars: @half_stars, empty_stars: @emtpy_stars }
+    else
+      @rating = { full_stars: 0, half_stars: 0, empty_stars: 0 }
+    end
   end
 
   private
