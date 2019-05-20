@@ -1,7 +1,6 @@
 <h1>Welcome on town bike</h1>
 <%= link_to "Sign up", new_user_registration_path %>
 
-
 <div class="container">
   <% @bikes.each do |bike| %>
     <div class="card border-bottom">
@@ -13,6 +12,7 @@
        model: <%= bike.model %>
        | owner: <%= bike.owner.username %>
        price: <%= bike.price %>
+       <%= image_tag bike.photo %>
        </p>
 
        <% if bike.bookings.size.zero? %>
