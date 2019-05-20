@@ -1,9 +1,9 @@
 class BikesController < ApplicationController
-  before_action :set_bike, only: [:show, :create, :edit, :update, :destroy]
+  before_action :set_bike, only: [:show, :edit, :update, :destroy]
+  # there is no root for this Action??? we only have pages#home for the root
   def index
     @bikes = policy_scope(Bike).order(created_at: :desc)
   end
-
   def show
   end
 
@@ -13,8 +13,8 @@ class BikesController < ApplicationController
   end
 
   def create
-    @bikes = Bike.new(bike_params)
-    @bike.user = user
+    @bike = Bike.new(bike_params)
+    @bike.owner = user
     authorize @bike
     if @bike.save
       redirect_to @bike
@@ -46,6 +46,7 @@ class BikesController < ApplicationController
   end
 
   def bike_params
-    params.require(:bike).permit(:description, :make, :model, :color, :type, :frame_size, :foldable, :location)
+    # other params to consider are -
+    params.require(:bike).permit(:description, :make, :model, :color, :bike_type, :frame_size, :foldable, :location, :price)
   end
 end

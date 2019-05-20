@@ -1,0 +1,47 @@
+.user-details {
+  margin: 30vw;
+  height: 35vh;
+  width: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 3px;
+  padding: 15px 45px;
+  align-items: center;
+  box-shadow: 0px 0px 5px rgba(20,20,20,0.2);
+}
+
+.user-details {
+  img {
+    height:75px;
+    width:75px;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.name-bookings {
+  display: flex;
+  margin: 20px 0;
+  align-items: center;
+  flex-direction: column;
+}
+
+// html
+//   <div class="user-details">
+//     <img class="avatar dropdown-toggle" id="navbarDropdown" src="user-image-pe" />
+//     <div class="name-bookings">
+//       <p>Frederic Jonquieres</p>
+//       <p>130 bookings</p>
+//     </div>
+//     <div class="stars">
+//       <p>
+//         <i class="fas fa-star"></i>
+//         <i class="fas fa-star"></i>
+//         <i class="fas fa-star"></i>
+//         <i class="fas fa-star"></i>
+//         <i class="far fa-star"></i>
+//       </p>
+//     </div>
+//   </div>
