@@ -1,5 +1,34 @@
-<h1>hello here is all your bike</h1>
+<h1>Welcome on town bike</h1>
+<%= link_to "Sign up", new_user_registration_path %>
 
-<% @bikes.each do |bike| %>
-<%= bike.name, user_bike_path(bike)  %>
 
+<div class="container">
+  <% @bikes.each do |bike| %>
+    <div class="card border-bottom">
+
+      <p><strong><%= link_to "Bike", bike_url(bike) %></strong></p>
+      <p>
+       id: <%= bike.id %>
+       make: <%= bike.make %>
+       model: <%= bike.model %>
+       | owner: <%= bike.owner.username %>
+       price: <%= bike.price %>
+       </p>
+
+       <% if bike.bookings.size.zero? %>
+         <p>Not ridden yet!</p>
+       <% else %>
+       <p><strong>Ridden By</strong></p>
+         <% bike.bookings.each do |booking| %>
+           <p>Rider: <%= booking.rider.username %>
+            <% if booking.review %>
+              <%= booking.review.stars %>
+            <% else %>
+              <p>No reviews</p>
+            <% end %>
+           </p>
+         <% end %>
+       <% end %>
+     </div>
+  <% end %>
+</div>
