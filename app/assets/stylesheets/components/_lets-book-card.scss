@@ -1,4 +1,25 @@
 
 .lets-book-card {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 10px;
+  background-color: white;
+  margin-left: 16px;
+}
+
+.lets-book-header {
+  border-bottom: 1px solid $grey;
+  padding-bottom: 16px;
+
+}
+
+.lets-book-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // grid-template-rows: 25% 100px auto;
+}
+
+.owner-details {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
 }
