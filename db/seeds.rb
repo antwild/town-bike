@@ -14,7 +14,7 @@ users_attributes = [
     last_name: "Jones",
     username: "DJ1",
     about_me: "I'm alright",
-    photo: "che.jpeg"
+    photo: "che.jpg"
   },
   {
     email: "Johnny@hotmail.com",
@@ -23,7 +23,7 @@ users_attributes = [
     last_name: "Squirmo",
     username: "Sandpaper",
     about_me: "I'm not from around here",
-    photo: "jon.jpeg"
+    photo: "jon.jpg"
   },
   {
     email: "ant@yahoo.com",
@@ -41,7 +41,7 @@ users_attributes = [
     last_name: "Frank",
     username: "FreddyFresh",
     about_me: "I like cheese",
-    photo: "fred.jpeg"
+    photo: "fred.jpg"
   },
   {
     email: "zapz@hotmail.co.uk",
@@ -51,7 +51,7 @@ users_attributes = [
     last_name: "Smith",
     username: "ZacAttack",
     about_me: "Did someone say vape?",
-    photo: "zac.jpeg"
+    photo: "zac.jpg"
   }
 ]
 
@@ -94,7 +94,7 @@ bikes_attributes = [
     location: "Croydon",
     owner_id: 3,
     price: 15,
-    photo: "blue.jpeg"
+    photo: "blue.jpg"
   },
   {
     make: "Trek",
