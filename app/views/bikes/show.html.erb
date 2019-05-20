@@ -2,6 +2,6 @@
 <%= @bike.make %>
 <%= @bike.model %>
 <%= simple_form_for(Booking.new, :url => new_booking_path, :method => :get) do |f|%>
-  <%= hidden_field_tag :bike_id, @bike.id %>
+ <%= hidden_field_tag :bike_id, @bike.id %>
   <%= f.submit "Book" %>
 <% end %>
