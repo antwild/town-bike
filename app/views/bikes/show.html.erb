@@ -3,10 +3,13 @@
 
 <div class="lets-book-container">
 
+  <div class="bike-img-container">
     <%= image_tag @bike.photo, width: 600 %>
+  </div>
 
+  <div class="bike-info-container">
     <div class="lets-book-card">
-      <div id="lets-book-header">
+      <div class="lets-book-header">
         <h2>Let's Ride!</h2>
         <% @rating[:full_stars].times do |time| %>
           <i class="fas fa-star"></i>
@@ -17,20 +20,25 @@
         <% @rating[:empty_stars].times do |time| %>
           <i class="far fa-star"></i>
         <% end %>
+        <hr>
       </div>
-
       <%= simple_form_for(Booking.new, :url => new_booking_path, :method => :get) do |f|%>
         <%= hidden_field_tag :bike_id, @bike.id %>
         <%= f.submit "Ride this Bike", class: "btn-ride" %>
       <% end %>
-    <div class="owner">
+    </div>
+
+    <div class="bike-owner-card">
       <div class="owner-details">
         <%= image_tag @bike.owner.photo, class: "avatar"%>
         <h2><%= @bike.owner.first_name %> <%= @bike.owner.last_name %></h2>
+      </div>
         <p>London, UK - joined <%= @bike.owner.created_at %></p>
+        <hr>
+      <div class="owner-description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem molestiae pariatur totam dolor quas quam suscipit, enim cupiditate at doloribus placeat maxime sunt minus, fugiat dolores quod, repellendus ipsam debitis.</p>
       </div>
     </div>
-
-    </div>
+  </div>
 </div>
 
