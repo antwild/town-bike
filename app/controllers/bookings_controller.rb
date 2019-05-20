@@ -5,17 +5,20 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @bike_id = params[:bike_id]
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = user
+    @booking.bike_id = params[:bike_id]
+    @booking.rider = current_user
     authorize @booking
     if @booking.save
       redirect_to @booking
     else
-      format.html { render :new }
+      render :new
     end
   end
 
@@ -42,6 +45,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:bike_id, :start_date, :end_date, :rider_id)
+    params.require(:booking).permit(:start_date, :end_date, :rider_id)
   end
 end
