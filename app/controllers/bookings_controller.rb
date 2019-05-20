@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
     if @booking.update(booking_params)
       redirect_to @booking
     else
-      format.html { render :edit }
+      render :edit
     end
   end
 
