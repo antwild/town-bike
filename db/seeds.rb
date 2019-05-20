@@ -168,7 +168,12 @@ bookings_attributes = [
 puts 'Creating reviews...'
 reviews_attributes = [
   {
-    stars: 4,
+    stars: 2,
+    description: "Good bike",
+    booking_id: 1
+  },
+  {
+    stars: 5,
     description: "Good bike",
     booking_id: 1
   },

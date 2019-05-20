@@ -48,8 +48,8 @@ class BikesController < ApplicationController
     if reviews.count.positive?
       @raw_rating = sum / reviews.count
       @full_stars = @raw_rating.floor
-      @half_stars = ((@raw_rating * 2).round / 2) - @full_stars
-      @emtpy_stars = 5 - @full_stars - (@half_stars * 2)
+      @half_stars = (((@raw_rating * 2).round / 2) - @full_stars) * 2
+      @emtpy_stars = 5 - @full_stars - @half_stars
       @rating = { full_stars: @full_stars, half_stars: @half_stars, empty_stars: @emtpy_stars }
     else
       @rating = { full_stars: 0, half_stars: 0, empty_stars: 0 }

@@ -9,7 +9,7 @@
     <i class="fas fa-star"></i>
   <% end %>
   <% @rating[:half_stars].times do |time| %>
-    <i class="far fa-star"></i>
+    <i class="fas fa-star-half-alt"></i>
   <% end %>
   <% @rating[:empty_stars].times do |time| %>
     <i class="far fa-star"></i>
@@ -18,5 +18,5 @@
 
 <%= simple_form_for(Booking.new, :url => new_booking_path, :method => :get) do |f|%>
   <%= hidden_field_tag :bike_id, @bike.id %>
-  <%= f.submit "Book" %>
+  <%= f.submit "Book", class: "btn-ride" %>
 <% end %>
