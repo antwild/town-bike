@@ -3,8 +3,8 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= hidden_field_tag :bike_id, @bike_id %>
   <div class="form-inputs book_bike">
-    <%= f.input :start_date, id: "book-date" %>
-    <%= f.input :end_date, html: {class: "book-date"} %>
+    <%= f.input :start_date%>
+    <%= f.input :end_date %>
   </div>
 
   <div class="form-actions">
