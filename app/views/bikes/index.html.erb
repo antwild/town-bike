@@ -33,11 +33,7 @@
   <h2>Latest Rides</h2>
   <div class="cards-pop">
 
-<<<<<<< HEAD
-  <% @bikes[0..3].each do |bike| %>
-=======
     <% @bikes[0..1].each do |bike| %>
->>>>>>> master
     <div class="card-trip">
       <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">
       <div class="card-trip-infos">
@@ -48,38 +44,6 @@
         <h2 class="card-trip-pricing"> <%= "£#{bike.price} per day" %></h2>
         <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
       </div>
-<<<<<<< HEAD
-
-  <% @bikes.each do |bike| %>
-    <div class="card border-bottom">
-
-      <p><strong><%= link_to "Bike", bike_url(bike) %></strong></p>
-      <p>
-       id: <%= bike.id %>
-       make: <%= bike.make %>
-       model: <%= bike.model %>
-       | owner: <%= bike.owner.username %>
-       price: <%= bike.price %>
-       <%= image_tag bike.photo %>
-       </p>
-
-       <% if bike.bookings.size.zero? %>
-         <p>Not ridden yet!</p>
-       <% else %>
-       <p><strong>Ridden By</strong></p>
-         <% bike.bookings.each do |booking| %>
-           <p>Rider: <%= booking.rider.username %>
-            <% if booking.review %>
-              <%= booking.review.stars %>
-            <% else %>
-              <p>No reviews</p>
-            <% end %>
-           </p>
-         <% end %>
-       <% end %>
-
-=======
->>>>>>> master
      </div>
     <% end %>
   </div>
