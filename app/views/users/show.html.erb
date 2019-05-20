@@ -1,13 +1,37 @@
-<h1 class="user-show-name"><%= @user.first_name %> <%= @user.last_name %></h1>
+<h1 class="user-show-name">Your Profile</h1>
 
-<div class="user-info">
-  <div class="user-text">
-    <p>Username: <span class="user-detail"><%= @user.username %></span></p>
-    <p>Email: <span class="user-detail email"><%= @user.email %></span></p>
-    <p>About me: <span class="user-detail"><%= @user.about_me %></span></p>
+  <div class="profile-container">
+
+    <div class="profile-show">
+      <div class="profile-nav">
+        <ul>
+          <li class="profile-active">My Details</li>
+          <li>My Bikes</li>
+          <li class="bottom-profile-nav">Bookings I've made</li>
+        </ul>
+      </div>
+
+      <!-- <div class="user-info"> -->
+        <div class="user-text">
+          <p class="profile-header">First Name</p>
+         <p class="profile-field"><%= @user.first_name%></p>
+          <p class="profile-header">Surname</p>
+         <p class="profile-field"><%= @user.last_name%></p>
+          <p class="profile-header">Username</p>
+         <p class="profile-field"><%= @user.username%></p>
+          <p class="profile-header">Email</p>
+         <p class="profile-field"><%= @user.email%></p>
+          <p class="profile-header">About me</p>
+         <p class="profile-field"><%= @user.about_me%></p>
+        </div>
+        <%= image_tag @user.photo, class: "user-show-image" %>
+      </div>
+    <!-- </div> -->
+
   </div>
-  <%= image_tag @user.photo, class: "user-show-image" %>
-</div>
 
-<h2 class="my-bike-title">My Bikes</h2>
+
+
+  <h2 class="my-bike-title">My Bikes</h2>
+
 
