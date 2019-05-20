@@ -1,3 +1,4 @@
+
 <h1><%= @bike.bike_type %> - <%= @bike.make %> <%= @bike.model %></h1>
 
 <%= image_tag @bike.photo, width: 300 %>
@@ -14,3 +15,8 @@
     <i class="far fa-star"></i>
   <% end %>
 </div>
+
+<%= simple_form_for(Booking.new, :url => new_booking_path, :method => :get) do |f|%>
+  <%= hidden_field_tag :bike_id, @bike.id %>
+  <%= f.submit "Book" %>
+<% end %>

@@ -1,7 +1,86 @@
-<h1>Welcome on town bike</h1>
-<%= link_to "Sign up", new_user_registration_path %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1528629297340-d1d466945dc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1695&q=80);">
+  <div class="container">
+    <h1>Town Bike</h1>
+    <p>Find wheels anywhwere</p>
+  </div>
+</div>
 
 <div class="container">
+
+  <h2>Popular Categories</h2>
+  <div class="cards-rec">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1544714097-0a9c4a18f4b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
+      <h3>X-treme</h3>
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1523815378073-a43ae3fbf36a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=776&q=80)">
+      <h3>Commute</h3>
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1541625247055-1a61cfa6a591?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
+      <h3>All Categories</h3>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+    <div class="banner2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1548691541-f8741b84d023?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80);">
+      <div class="banner-container">
+        <h1>Our Story</h1>
+        <p>Donec quis nulla ac dolor accumsan dictum. Donec lacinia elit sed faucibus tristique. Donec at convallis dui, quis varius odio. Aliquam et auctor orci. Curabitur dictum cursus convallis. Morbi sed sodales diam.</p>
+        <div class="btn btn-primary"><%= link_to "Learn More", "#" %></div>
+      </div>
+    </div>
+
+    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="..." alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="..." alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="..." alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div> -->
+
+
+    <!-- "https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" -->
+
+
+  <h2>Latest Rides</h2>
+  <div class="cards-pop">
+
+    <% @bikes[0..3].each do |bike| %>
+    <div class="card-trip">
+      <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= bike.make %></h2>
+          <p><%= bike.description %></p>
+        </div>
+        <h2 class="card-trip-pricing"> <%= "£#{bike.price} per day" %></h2>
+        <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+      </div>
+      
   <% @bikes.each do |bike| %>
     <div class="card border-bottom">
 
@@ -29,6 +108,28 @@
            </p>
          <% end %>
        <% end %>
+
      </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
