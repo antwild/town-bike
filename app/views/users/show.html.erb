@@ -1,0 +1,13 @@
+<h1 class="user-show-name"><%= @user.first_name %> <%= @user.last_name %></h1>
+
+<div class="user-info">
+  <div class="user-text">
+    <p>Username: <span class="user-detail"><%= @user.username %></span></p>
+    <p>Email: <span class="user-detail email"><%= @user.email %></span></p>
+    <p>About me: <span class="user-detail"><%= @user.about_me %></span></p>
+  </div>
+  <%= image_tag @user.photo, class: "user-show-image" %>
+</div>
+
+<h2 class="my-bike-title">My Bikes</h2>
+
