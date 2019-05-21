@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
     @bike_id = params[:bike_id]
     @booking = Booking.new
     authorize @booking
+    # raise
   end
 
   def create

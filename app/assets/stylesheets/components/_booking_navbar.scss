@@ -1,0 +1,25 @@
+.booking-banner {
+  background: $yellow;
+  // margin-top: 15px;
+  // display: flex;
+  text-align: center;
+  // justify-content: space-between;
+  height: 40px;
+  padding: 0px 50px;
+  margin-bottom: 20px;
+}
+
+.booking-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: inherit;
+}
+
+.booking-stage {
+  margin-bottom: 0;
+}
+
+.stage-space {
+  padding: 0 50px;
+}
