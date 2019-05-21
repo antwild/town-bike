@@ -39,19 +39,53 @@
 </div>
 
 <div class="reviews-container">
-  <% @bike.reviews.each do |review| %>
-    <div class="review-item">
-      <div class="review-header">
-        <% link_to user_url(review.user) do %>
-          <%= cl_image_tag review.rider.photo, class: 'avatar' %>
-        <% end %>
-        <div class="review-info">
-          <h2><%= review.booking.rider.username %></h2>
-          <!-- todo - format the date into MMM YYYY -->
-          <p><%= review.created_at %></p>
-        </div>
+  <% if @bike.reviews.present? %>
+    <div class="reviews-header">
+      <div class="reviews-summary">
+        <h2><%= @bike.reviews.size %> Review<% if @bike.reviews.size > 1 %><span>s</span><% end %>
+        </h2>
+        <% @rating[:full_stars].times do |time| %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <% @rating[:half_stars].times do |time| %>
+            <i class="fas fa-star-half-alt"></i>
+          <% end %>
+          <% @rating[:empty_stars].times do |time| %>
+            <i class="far fa-star"></i>
+          <% end %>
       </div>
     </div>
     <hr>
+    <% @bike.reviews.each do |review| %>
+      <div class="review-item">
+        <div class="review-header">
+
+            <%= cl_image_tag review.booking.rider.photo, class: 'avatar' %>
+
+          <div class="review-info">
+            <h2><%= review.booking.rider.username %></h2>
+            <!-- todo - format the date into MMM YYYY -->
+            <p><%= review.created_at %></p>
+          </div>
+          <div class="review-stars">
+            <% review.stars.times do |time| %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - review.stars).times do |time| %>
+              <i class="far fa-star"></i>
+            <% end %>
+          </div>
+        </div>
+        <p><%= review.description %></p>
+      </div>
+      <hr>
+    <% end %>
+  <% else %>
+    <h2>No reviews yet!</h2>
   <% end %>
 </div>
+
+
+
+
+
