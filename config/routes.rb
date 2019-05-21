@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'bikes#index'
+  root to: 'pages#home'
 
   resources :users, only: [:show, :new, :create, :edit, :update, :destroy] do
   end

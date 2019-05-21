@@ -1,8 +1,17 @@
 class UsersController < ApplicationController
-   def new
-    @user = User.new
+
+  def show
+    @user = User.find(params[:id])
+    @bikes = @user.bikes
+    @reviews = @user.bike_reviews
+    @bookings = @user.bike_bookings
     authorize @user
   end
+
+  def new
+    @user = User.new
+    authorize @user
+ end
 
   def create
     @user = User.new(user_params)

@@ -17,10 +17,11 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'geocoder'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', groups: %i[development test]
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem "algoliasearch-rails"
+gem 'pg_search'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
