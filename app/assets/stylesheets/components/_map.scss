@@ -1,0 +1,22 @@
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card-popup {
+  width: 100%;
+  background-color: white;
+}
+
+.owner {
+  display: flex;
+  align-items: center;
+  p {
+    margin-left: 16px;
+    margin-bottom: 0px;
+  }
+}
