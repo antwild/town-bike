@@ -12,10 +12,11 @@ class BikesController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { bike: bike })
       }
     end
+    @bikes.each { |bike| rating(bike) }
   end
 
   def show
-    rating
+    rating(@bike)
   end
 
   def new
@@ -49,8 +50,8 @@ class BikesController < ApplicationController
     @bike.destroy
   end
 
-  def rating
-    reviews = @bike.reviews
+  def rating(param)
+    reviews = param.reviews
     sum = 0
     reviews.each do |r|
       sum += r.stars

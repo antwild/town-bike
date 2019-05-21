@@ -16,6 +16,8 @@ const fitMapToMarkers = (map, markers) => {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
     });
+
+    const markers = JSON.parse(mapElement.dataset.markers);
     const addMarkersToMap = (map, markers) => {
       markers.forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
@@ -26,6 +28,7 @@ const fitMapToMarkers = (map, markers) => {
           .addTo(map);
       });
     };
+    addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
   }
 };
