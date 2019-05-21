@@ -1,0 +1,48 @@
+.lets-book-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bike-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.lets-book-card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 10px;
+  background-color: white;
+  margin-left: 16px;
+  margin-bottom: 16px;
+  padding: 24px 36px;
+}
+
+.lets-book-header {
+  margin-bottom: 24px;
+}
+
+.bike-owner-card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 10px;
+  background-color: white;
+  margin-left: 16px;
+  p {
+    padding: 0 36px;
+  }
+}
+
+.owner-details {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 0 36px;
+  h2 {
+    margin-left: 24px;
+  }
+}
+
+.owner-description {
+  padding: 24px 36px;
+}
