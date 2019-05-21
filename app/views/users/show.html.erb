@@ -61,17 +61,27 @@
       </div>
       <!-- my bikes end -->
 
+      <!-- bookings I've made start -->
       <div class="bookings-made">
         <h5 class="align-center profile-bookings">Bookings I've made</h5>
         <% if @bookings.size.positive? %>
-          <%= render "shared/card-product" %>
+
+          <% @bookings.each do |booking| %>
+            <div class="card-product">
+              <img src=<%= image_path "#{booking.bike.photo}" %>>
+              <div class="card-product-infos">
+                <h2><%= booking.bike.make %><span> - £20<!-- <p><%#= booking.total %></p> --></span></h2> <p><%= booking.start_date %> til <%= booking.end_date %></p>
+              </div>
+            </div>
+          <% end %>
+
         <% else %>
           <p>You haven't rented any bikes yet!</p>
         <% end %>
 
 
       </div>
-
+      <!-- bookings I've made end -->
 
     </div>
   </div>
