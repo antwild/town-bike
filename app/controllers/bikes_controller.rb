@@ -14,8 +14,8 @@ class BikesController < ApplicationController
     end
   end
 
-  def showg
-    ratinggi
+  def show
+    rating
   end
 
   def new
