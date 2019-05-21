@@ -8,8 +8,8 @@ class User < ApplicationRecord
 
 # owner
   has_many :bikes, foreign_key: :owner_id
-  has_many :bookings, through: :bikes
-  has_many :reviews, through: :bookings
+  has_many :bike_bookings, through: :bikes, source: :bookings
+  has_many :bike_reviews, through: :bike_bookings, source: :review
 
 
 # rider

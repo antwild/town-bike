@@ -34,12 +34,12 @@
       <div class="user-bikes my-bikes">
         <h5 class="align-center">My Bikes</h5>
         <div class="my-cards">
-          <% @bikes.each do |bicycle| %>
-            <%= link_to bike_path do %>
-            <div class="my-card-category card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "#{bicycle.photo}" %>)">
-            <%= bicycle.make %>
-            <% end %>
+          <% @bikes.each do |bike| %>
+            <%= link_to bike_path class: "no-underline" do %>
+              <div class="my-card-category card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "#{bike.photo}" %>)">
+              <%= bike.make %>
             </div>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -47,8 +47,30 @@
       <div class="reviews my-bikes">
         <h5 class="align-center">My Reviews</h5>
 
+        <% if @reviews.size.positive? %>
+          <% @reviews.each do |review| %>
+            <div class="the-review">
+              <p><%= review&.stars %> Stars - <%= review&.created_at.strftime("%d-%m-%y") %></p>
+              <p><%= review&.description %></p>
+            </div>
+          <% end %>
+        <% else %>
+          <p>Yet to be reviewed!</p>
+        <% end %>
+
       </div>
       <!-- my bikes end -->
+
+      <div class="bookings-made">
+        <h5 class="align-center profile-bookings">Bookings I've made</h5>
+        <% if @bookings.size.positive? %>
+          <%= render "shared/card-product" %>
+        <% else %>
+          <p>You haven't rented any bikes yet!</p>
+        <% end %>
+
+
+      </div>
 
 
     </div>

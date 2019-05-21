@@ -1,6 +1,7 @@
 const profileNav = document.querySelectorAll(".profile-li");
 const myDetails = document.querySelectorAll(".my-details");
 const myBikes = document.querySelectorAll(".my-bikes");
+const bookings = document.querySelectorAll(".bookings-made");
 const editBtn = document.querySelector(".edit-btn");
 
 profileNav.forEach(li => {
@@ -13,9 +14,7 @@ profileNav.forEach(li => {
 });
 
 profileNav[0].addEventListener("click", () => {
-  myBikes.forEach(detail => {
-    detail.style.display = "none";
-  });
+  removeDetails();
   myDetails.forEach(detail => {
     detail.style.display = "block";
   });
@@ -27,19 +26,23 @@ profileNav[1].addEventListener("click", () => {
   myBikes.forEach(detail => {
     detail.style.display = "block";
   });
-  editBtn.style.display = "none";
 });
 
 profileNav[2].addEventListener("click", () => {
   removeDetails();
-  myBikes.forEach(detail => {
+  bookings.forEach(detail => {
     detail.style.display = "block";
   });
-  editBtn.style.display = "none";
 });
 
 const removeDetails = () => {
   myDetails.forEach(detail => {
+    detail.style.display = "none";
+  });
+  myBikes.forEach(detail => {
+    detail.style.display = "none";
+  });
+  bookings.forEach(detail => {
     detail.style.display = "none";
   });
   editBtn.style.display = "none";

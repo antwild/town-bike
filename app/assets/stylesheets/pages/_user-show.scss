@@ -116,11 +116,35 @@
   display: none;
 }
 
+.bookings-made {
+  display: none;
+}
+
 .reviews {
   width: 300px;
-  background-color: #fff;
+  border: 1px solid rgba(40, 40, 40, 0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .align-center {
   text-align: center;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.profile-bookings {
+  width: 70vw;
+}
+
+.the-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  p {
+    margin: 0 0 0 15px;
+  }
+
+
 }
