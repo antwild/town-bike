@@ -3,7 +3,15 @@ class BikesController < ApplicationController
   # there is no root for this Action??? we only have pages#home for the root
   def index
     @bikes = policy_scope(Bike).order(created_at: :desc)
+    @bike_locs = Bike.where.not(latitude: nil, longitude: nil)
+    @markers = @bike_locs.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
+
   def show
     rating
   end
