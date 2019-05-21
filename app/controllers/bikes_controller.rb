@@ -5,16 +5,16 @@ class BikesController < ApplicationController
   def index
     @bikes = policy_scope(Bike).order(created_at: :desc)
     @bike_locs = Bike.where.not(latitude: nil, longitude: nil)
-    @markers = @bike_locs.map do |flat|
+    @markers = @bike_locs.map do |bike|
       {
-        lat: flat.latitude,
-        lng: flat.longitude,
+        lat: bike.latitude,
+        lng: bike.longitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { bike: bike })
       }
     end
   end
 
-  def show
+  def showg
     ratinggi
   end
 
