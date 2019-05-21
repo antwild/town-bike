@@ -32,17 +32,20 @@
 
       <!-- my bikes start -->
       <div class="user-bikes my-bikes">
+        <h5 class="align-center">My Bikes</h5>
         <div class="my-cards">
-          <% @bikes.each do |bike| %>
-            <div class="my-card-category card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "#{bike.photo}" %>)">
-            <%= bike.make %>
+          <% @bikes.each do |bicycle| %>
+            <%= link_to bike_path do %>
+            <div class="my-card-category card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "#{bicycle.photo}" %>)">
+            <%= bicycle.make %>
+            <% end %>
             </div>
           <% end %>
         </div>
       </div>
 
       <div class="reviews my-bikes">
-        <h4>my reviews</h4>
+        <h5 class="align-center">My Reviews</h5>
 
       </div>
       <!-- my bikes end -->
