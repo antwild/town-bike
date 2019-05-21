@@ -65,7 +65,6 @@
       <div class="bookings-made">
         <h5 class="align-center profile-bookings">Bookings I've made</h5>
         <% if @bookings.size.positive? %>
-
           <% @bookings.each do |booking| %>
             <div class="card-product">
               <img src=<%= image_path "#{booking.bike.photo}" %>>
@@ -74,12 +73,9 @@
               </div>
             </div>
           <% end %>
-
         <% else %>
           <p>You haven't rented any bikes yet!</p>
         <% end %>
-
-
       </div>
       <!-- bookings I've made end -->
 
