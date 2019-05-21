@@ -26,7 +26,7 @@
         <p class="profile-field"><%= @user.about_me%></p>
       </div>
 
-      <%= image_tag @user.photo, class: "user-show-image my-details" %>
+      <%= cl_image_tag @user.photo, class: "user-show-image my-details" %>
       <!-- my details end -->
 
 
@@ -34,7 +34,7 @@
       <div class="user-bikes my-bikes">
         <div class="my-cards">
           <% @bikes.each do |bike| %>
-            <div class="my-card-category card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../assets/images/<%= bike.photo %>')">
+            <div class="my-card-category card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "#{bike.photo}" %>)">
             <%= bike.make %>
             </div>
           <% end %>

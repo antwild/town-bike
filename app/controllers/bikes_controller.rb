@@ -1,9 +1,18 @@
 class BikesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
   # there is no root for this Action??? we only have pages#home for the root
   def index
     @bikes = policy_scope(Bike).order(created_at: :desc)
+    @bike_locs = Bike.where.not(latitude: nil, longitude: nil)
+    @markers = @bike_locs.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
+
   def show
     rating
   end
@@ -46,9 +55,9 @@ class BikesController < ApplicationController
       sum += r.stars
     end
     if reviews.count.positive?
-      @raw_rating = sum / reviews.count
+      @raw_rating = sum.to_f / reviews.count
       @full_stars = @raw_rating.floor
-      @half_stars = (((@raw_rating * 2).round / 2) - @full_stars) * 2
+      @half_stars = ((((@raw_rating * 2).round.to_f / 2) - @full_stars) * 2).to_i
       @emtpy_stars = 5 - @full_stars - @half_stars
       @rating = { full_stars: @full_stars, half_stars: @half_stars, empty_stars: @emtpy_stars }
     else

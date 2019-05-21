@@ -48,9 +48,11 @@
       <% end %>
     <% end %>
   </div>
-  <p class="link-to-bikes"><%= link_to "View all bikes", '#' %></p>
+  <p class="link-to-bikes"><%= link_to "View all bikes (#{Bike.count})", '#' %></p>
 </div>
 
+
+<%= render 'shared/map' %>
 
 
 
