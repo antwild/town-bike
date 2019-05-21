@@ -1,13 +1,25 @@
-<%= simple_form_for(@booking) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <%= hidden_field_tag :bike_id, @bike_id %>
-  <div class="form-inputs book_bike">
-    <%= f.input :start_date%>
-    <%= f.input :end_date %>
-  </div>
+<%#= simple_form_for(@booking) do |f| %>
+  <%#= f.error_notification %>
+  <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%#= hidden_field_tag :bike_id, @bike_id %>
+  <!-- <div class="form-inputs book_bike"> -->
+    <%#= f.input :start_date%>
+    <%#= f.input :end_date %>
+  <!-- </div> -->
 
-  <div class="form-actions">
-    <%= f.button :submit, class: "book-btn" %>
+  <!-- <div class="form-actions"> -->
+    <%#= f.button :submit, class: "book-btn" %>
+  <!-- </div> -->
+<%# end %>
+
+<div class="container">
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+    <h2>Flatpickr Demo</h2>
+
+    <%= simple_form_for :search, method: "get" do |f| %>
+      <%= f.input :start_date, as: :string, required: false, input_html: {class: "start_date"} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {class: "end_date"} %>
+      <%= f.button :submit, "Go", class: "btn btn-primary" %>
+    <% end %>
   </div>
-<% end %>
+</div>

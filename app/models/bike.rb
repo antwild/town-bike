@@ -1,4 +1,5 @@
 class Bike < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   belongs_to :owner, foreign_key: "owner_id", class_name: "User"
   has_many :bookings
   has_many :reviews, through: :bookings
@@ -12,4 +13,11 @@ class Bike < ApplicationRecord
   validates :photo, presence: true
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  include PgSearch
+  pg_search_scope :search_by_make_and_model,
+                  against: [ :make, :model ],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
