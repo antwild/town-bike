@@ -9,5 +9,7 @@ import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
 flatpickr(".start_date", {
   altInput: true,
   dateFormat: "d.m.Y",
+  altFormat: "d-m-Y",
+  minDate: 'today',
   "plugins": [new rangePlugin({ input: ".end_date"})]
 })

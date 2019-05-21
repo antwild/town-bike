@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_21_072624) do
+ActiveRecord::Schema.define(version: 2019_05_21_152207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,8 +41,16 @@ ActiveRecord::Schema.define(version: 2019_05_21_072624) do
     t.bigint "rider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "total"
     t.index ["bike_id"], name: "index_bookings_on_bike_id"
     t.index ["rider_id"], name: "index_bookings_on_rider_id"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_payments_on_booking_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -74,5 +82,6 @@ ActiveRecord::Schema.define(version: 2019_05_21_072624) do
   add_foreign_key "bikes", "users", column: "owner_id"
   add_foreign_key "bookings", "bikes"
   add_foreign_key "bookings", "users", column: "rider_id"
+  add_foreign_key "payments", "bookings"
   add_foreign_key "reviews", "bookings"
 end
