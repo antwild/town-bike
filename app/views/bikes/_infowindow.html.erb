@@ -1,11 +1,11 @@
 <div class="card-popup">
-  <%= image_tag bike.photo, style: 'width:100%;' %>
+  <%= cl_image_tag bike.photo, style: 'width:100%;' %>
   <p><%= bike.bike_type %> - <%= bike.make %> <%= bike.model %></p>
 
   <p>£<%= bike.price %>per day</p>
   <hr>
   <div class="owner">
-    <%= image_tag bike.owner.photo, class: "avatar"%>
+    <%= cl_image_tag bike.owner.photo, class: "avatar"%>
     <p>Owned by <%= bike.owner.username %></p>
   </div>
 </div>
