@@ -3,7 +3,7 @@
 <div class="lets-book-container">
 
   <div class="bike-img-container">
-    <%= image_tag @bike.photo, width: 600 %>
+   <%= cl_image_tag @bike.photo, width: 600 %>
   </div>
 
   <div class="bike-info-container">
@@ -29,7 +29,7 @@
 
     <div class="bike-owner-card">
       <div class="owner-details">
-        <%= image_tag @bike.owner.photo, class: "avatar"%>
+        <%= cl_image_tag @bike.owner.photo, class: "avatar"%>
         <h2><%= @bike.owner.first_name %> <%= @bike.owner.last_name %></h2>
       </div>
         <p>London, UK - joined <%= @bike.owner.created_at %></p>
