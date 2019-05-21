@@ -1,0 +1,150 @@
+.profile-top {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20vw;
+}
+
+.profile-container {
+  margin: 0 auto;
+  width: 80vw;
+}
+
+.user-show-name {
+  padding-top: 30px;
+  padding-left: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.edit-btn {
+  font-size: 12px;
+  height: 25px;
+  background-color: #F2EC43;
+  color: #222326;
+  border: 1px solid #222326;
+  padding: 3px 10px;
+  border-radius: 25px;
+  margin-left: 20px;
+  transition: 0.2s;
+  &:hover {
+    background-color: #fffbaf;
+    text-decoration: none;
+    color: #222326;
+  }
+}
+
+.user-detail {
+  margin-left: 30px;
+}
+
+.email {
+  margin-left: 60px;
+}
+
+.user-show-image {
+  height: 200px;
+  width: 200px;
+  border-radius: 3px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.my-bike-title {
+  text-align: center;
+}
+
+.profile-show {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-nav {
+  ul {
+    padding: 0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+  li {
+    padding: 15px;
+    list-style: none;
+    padding: 1px solid black;
+    font-size: smaller;
+    border-top: 1px solid rgba(40, 40, 40, 0.2);
+    border-right: 1px solid rgba(40, 40, 40, 0.2);
+    border-left: 1px solid rgba(40, 40, 40, 0.2);
+    width: 200px;
+    cursor: pointer;
+  }
+}
+
+.bottom-profile-nav {
+  border-bottom: 1px solid rgba(40, 40, 40, 0.2);
+}
+
+.profile-active {
+  border-left: 3px solid red!important;
+  &:hover {
+    border-left: 3px solid red!important;
+    transition: 0.3s;
+  }
+}
+
+.profile-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.user-text {
+  width: 400px;
+}
+
+.profile-field {
+  font-size: 15px;
+  background-color: #FAFBFC;
+  padding-left: 10px;
+  border: 1px solid #DDD;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.my-details {
+  display: block;
+}
+
+.my-bikes {
+  display: none;
+}
+
+.bookings-made {
+  display: none;
+}
+
+.reviews {
+  width: 300px;
+  border: 1px solid rgba(40, 40, 40, 0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.align-center {
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.profile-bookings {
+  width: 70vw;
+}
+
+.the-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  p {
+    margin: 0 0 0 15px;
+  }
+
+
+}
