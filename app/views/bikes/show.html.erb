@@ -1,11 +1,9 @@
 <h1><%= @bike.bike_type %> - <%= @bike.make %> <%= @bike.model %></h1>
 
 <div class="lets-book-container">
-
   <div class="bike-img-container">
    <%= cl_image_tag @bike.photo, width: 600 %>
   </div>
-
   <div class="bike-info-container">
     <div class="lets-book-card">
       <div class="lets-book-header">
@@ -26,7 +24,6 @@
         <%= f.submit "Ride this Bike", class: "btn-ride" %>
       <% end %>
     </div>
-
     <div class="bike-owner-card">
       <div class="owner-details">
         <%= cl_image_tag @bike.owner.photo, class: "avatar"%>
@@ -39,4 +36,22 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="reviews-container">
+  <% @bike.reviews.each do |review| %>
+    <div class="review-item">
+      <div class="review-header">
+        <% link_to user_url(review.user) do %>
+          <%= cl_image_tag review.rider.photo, class: 'avatar' %>
+        <% end %>
+        <div class="review-info">
+          <h2><%= review.booking.rider.username %></h2>
+          <!-- todo - format the date into MMM YYYY -->
+          <p><%= review.created_at %></p>
+        </div>
+      </div>
+    </div>
+    <hr>
+  <% end %>
 </div>
