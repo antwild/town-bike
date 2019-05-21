@@ -1,18 +1,31 @@
 class BikesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_bike, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_bike, only: %i[show edit update destroy]
   # there is no root for this Action??? we only have pages#home for the root
   def index
-    @bikes = policy_scope(Bike).order(created_at: :desc)
-    @bike_locs = Bike.where.not(latitude: nil, longitude: nil)
-    @markers = @bike_locs.map do |bike|
-      {
-        lat: bike.latitude,
-        lng: bike.longitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { bike: bike })
-      }
+    if params[:s].blank?
+      @bikes = policy_scope(Bike).order(created_at: :desc)
+      @bike_locs = Bike.where.not(latitude: nil, longitude: nil)
+      @markers = @bike_locs.map do |bike|
+        {
+          lat: bike.latitude,
+          lng: bike.longitude,
+          infoWindow: render_to_string(partial: "infowindow", locals: { bike: bike })
+        }
+      end
+      @bikes.each { |bike| rating(bike) }
+    else
+      @bikes = policy_scope(Bike).search_by_make_and_model(params[:s])
+      @bike_locs = Bike.where.not(latitude: nil, longitude: nil)
+      @markers = @bike_locs.map do |bike|
+        {
+          lat: bike.latitude,
+          lng: bike.longitude,
+          infoWindow: render_to_string(partial: "infowindow", locals: { bike: bike })
+        }
+      end
+      @bikes.each { |bike| rating(bike) }
     end
-    @bikes.each { |bike| rating(bike) }
   end
 
   def show

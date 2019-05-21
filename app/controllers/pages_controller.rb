@@ -4,14 +4,14 @@ class PagesController < ApplicationController
 
   def home
     @bikes = policy_scope(Bike).order(created_at: :desc)
-      @bike_locs = Bike.where.not(latitude: nil, longitude: nil)
-      @markers = @bike_locs.map do |bike|
-        {
-          lat: bike.latitude,
-          lng: bike.longitude,
-          infoWindow: render_to_string(partial: "infowindow", locals: { bike: bike })
-        }
-      end
-      @bikes.each { |bike| rating(bike) }
+    @bike_locs = Bike.where.not(latitude: nil, longitude: nil)
+    @markers = @bike_locs.map do |bike|
+      {
+        lat: bike.latitude,
+        lng: bike.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { bike: bike })
+      }
+    end
+    @bikes.each { |bike| rating(bike) }
   end
 end

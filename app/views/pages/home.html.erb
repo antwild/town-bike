@@ -15,9 +15,11 @@
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1523815378073-a43ae3fbf36a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=776&q=80)">
       <h3>Commute</h3>
     </div>
+    <%= link_to bikes_path do %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1541625247055-1a61cfa6a591?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
       <h3>All Categories</h3>
     </div>
+    <% end %>
   </div>
 
 
@@ -25,7 +27,7 @@
       <div class="banner-container">
         <h1>Our Story</h1>
         <p>Donec quis nulla ac dolor accumsan dictum. Donec lacinia elit sed faucibus tristique. Donec at convallis dui, quis varius odio. Aliquam et auctor orci. Curabitur dictum cursus convallis. Morbi sed sodales diam.</p>
-        <div class="btn btn-primary"><%= link_to "Learn More", "#" %></div>
+        <div class="btn btn-yellow2"><%= link_to "Learn More", "#" %></div>
       </div>
     </div>
 
@@ -48,8 +50,9 @@
       <% end %>
     <% end %>
   </div>
-  <p class="link-to-bikes"><%= link_to "View all bikes (#{Bike.count})", bikes_path %></p>
+  <p class="link-to-bikes"><%= link_to "View all bikes (#{@bikes.count})", bikes_path %></p>
+
 </div>
 
 
-<%= render 'shared/map' %>
+
