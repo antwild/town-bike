@@ -5,16 +5,18 @@ class BikesController < ApplicationController
   def index
     @bikes = policy_scope(Bike).order(created_at: :desc)
     @bike_locs = Bike.where.not(latitude: nil, longitude: nil)
-    @markers = @bike_locs.map do |flat|
+    @markers = @bike_locs.map do |bike|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: bike.latitude,
+        lng: bike.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { bike: bike })
       }
     end
+    @bikes.each { |bike| rating(bike) }
   end
 
   def show
-    rating
+    rating(@bike)
   end
 
   def new
@@ -48,8 +50,8 @@ class BikesController < ApplicationController
     @bike.destroy
   end
 
-  def rating
-    reviews = @bike.reviews
+  def rating(param)
+    reviews = param.reviews
     sum = 0
     reviews.each do |r|
       sum += r.stars
