@@ -74,6 +74,6 @@ class BikesController < ApplicationController
 
   def bike_params
     # other params to consider are -
-    params.require(:bike).permit(:description, :make, :model, :color, :bike_type, :frame_size, :foldable, :location, :price)
+    params.require(:bike).permit(:description, :make, :model, :color, :bike_type, :frame_size, :foldable, :location, :price, :photo)
   end
 end
