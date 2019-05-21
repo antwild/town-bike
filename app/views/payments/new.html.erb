@@ -1,0 +1,58 @@
+<div class="booking-banner">
+  <div class="booking-container">
+      <a class="booking-navbar-logo">
+        <%= link_to root_path do %>
+          <img class="booking-navbar-logo" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+        <% end %>
+      </a>
+    <h4 class="booking-stage">Pick a Date <span class="stage-space"> > </span> <span class="stage-space"> <strong>Review Booking </strong></span><span class="stage-space"> > </span> <span class="stage-space"> Checkout </span></h4>
+  </div>
+</div>
+
+
+  <h1>Create payment</h1>
+  <div class="booking-infos">
+    <div class="booking-cards">
+      <div class="booked-date">
+        <div class="booking-total">
+          <p>start date : <%= @booking.start_date.strftime("%d-%m-%y") %></p>
+              <% date = @booking.end_date - @booking.start_date %>
+             <p><%= date %></p>
+               <%= @booking.bike.price %>
+
+          <p>Total: <%= @booking.total %></p>
+        </div>
+      </div>
+    </div>
+      <%= simple_form_for([@booking, @payment]) do |f| %>
+      <%= f.submit "Pay" %>
+      <% end %>
+  </div>
+  <div class="card-trip">
+    <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">
+    <div class="card-trip-infos">
+      <div>
+        <h2>Title here</h2>
+        <p>The description here!</p>
+      </div>
+      <h2 class="card-trip-pricing">£9.99 per day</h2>
+      <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+    </div>
+  </div>
+
+  <div class="user-details">
+    <img class="avatar dropdown-toggle" id="navbarDropdown" src="user-image-pe" />
+    <div class="name-bookings">
+      <p>Frederic Jonquieres</p>
+      <p>130 bookings</p>
+    </div>
+    <div class="stars">
+      <p>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+      </p>
+    </div>
+  </div>

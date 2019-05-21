@@ -11,6 +11,7 @@
   </head>
   <body>
     <% if params[:controller] == "bookings" && params[:action] == "new" %>
+    <% elsif params[:controller] == "payments" && params[:action] == "new" %>
     <% else %>
       <%= render 'shared/navbar' %>
     <% end %>

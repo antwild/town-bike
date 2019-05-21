@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :bikes
   resources :bookings, only: [:show, :new, :create, :edit, :update, :destroy] do
     resources :reviews, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :payments, only: [:new, :create]
   end
 end
