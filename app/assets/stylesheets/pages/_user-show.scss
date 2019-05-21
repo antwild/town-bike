@@ -27,12 +27,13 @@
   padding: 3px 10px;
   border-radius: 25px;
   margin-left: 20px;
+  transition: 0.2s;
+  &:hover {
+    background-color: #fffbaf;
+    text-decoration: none;
+    color: #222326;
+  }
 }
-
-// .user-info {
-//   display: flex;
-//   justify-content: space-between;
-// }
 
 .user-detail {
   margin-left: 30px;
@@ -71,6 +72,8 @@
     border-top: 1px solid rgba(40, 40, 40, 0.2);
     border-right: 1px solid rgba(40, 40, 40, 0.2);
     border-left: 1px solid rgba(40, 40, 40, 0.2);
+    width: 200px;
+    cursor: pointer;
   }
 }
 
@@ -92,7 +95,7 @@
 }
 
 .user-text {
-  width: 350px;
+  width: 400px;
 }
 
 .profile-field {
@@ -109,6 +112,8 @@
   display: block;
 }
 
-h4 {
+.my-bikes {
   display: none;
 }
+
+

@@ -1,6 +1,6 @@
 const profileNav = document.querySelectorAll(".profile-li");
 const myDetails = document.querySelectorAll(".my-details");
-const h4 = document.querySelectorAll("h4");
+const myBikes = document.querySelectorAll(".my-bikes");
 const editBtn = document.querySelector(".edit-btn");
 
 profileNav.forEach(li => {
@@ -13,7 +13,7 @@ profileNav.forEach(li => {
 });
 
 profileNav[0].addEventListener("click", () => {
-  h4.forEach(detail => {
+  myBikes.forEach(detail => {
     detail.style.display = "none";
   });
   myDetails.forEach(detail => {
@@ -24,7 +24,7 @@ profileNav[0].addEventListener("click", () => {
 
 profileNav[1].addEventListener("click", () => {
   removeDetails();
-  h4.forEach(detail => {
+  myBikes.forEach(detail => {
     detail.style.display = "block";
   });
   editBtn.style.display = "none";
@@ -32,7 +32,7 @@ profileNav[1].addEventListener("click", () => {
 
 profileNav[2].addEventListener("click", () => {
   removeDetails();
-  h4.forEach(detail => {
+  myBikes.forEach(detail => {
     detail.style.display = "block";
   });
   editBtn.style.display = "none";

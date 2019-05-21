@@ -14,12 +14,10 @@
         </ul>
       </div>
 
-      <!-- my details -->
+      <!-- my details start-->
       <div class="user-text my-details">
-        <p class="profile-header">First Name</p>
-        <p class="profile-field"><%= @user.first_name%></p>
-        <p class="profile-header">Surname</p>
-        <p class="profile-field"><%= @user.last_name%></p>
+        <p class="profile-header">Name</p>
+        <p class="profile-field"><%= @user.first_name%> <%= @user.last_name%></p>
         <p class="profile-header">Username</p>
         <p class="profile-field"><%= @user.username%></p>
         <p class="profile-header">Email</p>
@@ -29,18 +27,28 @@
       </div>
 
       <%= image_tag @user.photo, class: "user-show-image my-details" %>
-      <!-- my details -->
+      <!-- my details end -->
 
 
-      <!-- my bikes -->
+      <!-- my bikes start -->
+      <div class="user-bikes my-bikes">
+        <div class="my-cards">
+          <% @bikes.each do |bike| %>
+            <div class="my-card-category card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../assets/images/<%= bike.photo %>')">
+            <%= bike.make %>
+            </div>
+          <% end %>
+        </div>
+      </div>
 
-      <h4>bike card</h4>
+      <div class="reviews my-bikes">
+        <h4>my reviews</h4>
 
-      <h4>bike review</h4>
+      </div>
+      <!-- my bikes end -->
 
 
     </div>
-
   </div>
 
 
