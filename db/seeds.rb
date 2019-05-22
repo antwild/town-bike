@@ -14,7 +14,7 @@ users_attributes = [
     last_name: "Jones",
     username: "DJ1",
     about_me: "I'm alright",
-    photo: "che.jpg"
+    remote_photo_url: "https://res.cloudinary.com/zachobbs/image/upload/v1558532976/gun_face_180622_hpMain_4x3_992_z2imdj.jpg"
   },
   {
     email: "Johnny@hotmail.com",
@@ -23,7 +23,7 @@ users_attributes = [
     last_name: "Squirmo",
     username: "Sandpaper",
     about_me: "I'm not from around here",
-    photo: "jon.jpg"
+    remote_photo_url: "https://res.cloudinary.com/zachobbs/image/upload/v1558532978/pbox.php_qe0k4v.gif"
   },
   {
     email: "ant@yahoo.com",
@@ -32,16 +32,16 @@ users_attributes = [
     last_name: "Hero",
     username: "DatGuy",
     about_me: "I'm just dat guy",
-    photo: "ant.jpg"
+    remote_photo_url: "https://res.cloudinary.com/zachobbs/image/upload/v1558532984/methode_2Ftimes_2Fprod_2Fweb_2Fbin_2Fa180333e-f0e1-11e8-8c84-29b2667b0b46_blfzcd.jpg"
   },
   {
     email: "fred_fr@gmail.fr",
     password: "123456",
-    first_name: "Fredro",
+    first_name: "Freda",
     last_name: "Frank",
     username: "FreddyFresh",
     about_me: "I like cheese",
-    photo: "fred.jpg"
+    remote_photo_url: "https://res.cloudinary.com/zachobbs/image/upload/v1558532961/demo-pic4_gl82z5.jpg"
   },
   {
     email: "zapz@hotmail.co.uk",
@@ -51,7 +51,7 @@ users_attributes = [
     last_name: "Smith",
     username: "ZacAttack",
     about_me: "Did someone say vape?",
-    photo: "zac.jpg"
+    remote_photo_url: "https://res.cloudinary.com/zachobbs/image/upload/v1558532962/screen-shot-2019-02-15-at-19-16-58-720x720_ohivk8.jpg"
   }
 ]
 
@@ -75,7 +75,7 @@ bikes_attributes = [
     location: "Camberwell",
     owner_id: User.all.sample.id,
     price: 10,
-    photo: "red.jpg"
+    remote_photo_url: "https://res.cloudinary.com/zachobbs/image/upload/v1558532343/sagar-rana-193892-unsplash_w9hiko.jpg"
   },
   {
     make: "Eddy Merckx",
@@ -84,11 +84,11 @@ bikes_attributes = [
     bike_type: "Endurance",
     description: "Wide tires",
     frame_size: "Large",
-    foldable: true,
+    foldable: false,
     location: "Hoxton",
     owner_id: User.all.sample.id,
     price: 8,
-    photo: "green.jpg"
+    remote_photo_url: "https://res.cloudinary.com/zachobbs/image/upload/v1558532423/robert-bye-200735-unsplash_b7pxmt.jpg"
   },
   {
     make: "BMC",
@@ -97,11 +97,11 @@ bikes_attributes = [
     bike_type: "Mountain",
     description: "Durable",
     frame_size: "Medium",
-    foldable: false,
+    foldable: true,
     location: "Croydon",
     owner_id: User.all.sample.id,
     price: 15,
-    photo: "blue.jpg"
+    remote_photo_url: "https://res.cloudinary.com/zachobbs/image/upload/v1558532817/folding-bike_hpqewr.jpg"
   },
   {
     make: "Trek",
@@ -114,7 +114,7 @@ bikes_attributes = [
     location: "Hounslow",
     owner_id: User.all.sample.id,
     price: 19,
-    photo: "white.jpg"
+    remote_photo_url: "https://res.cloudinary.com/zachobbs/image/upload/v1558532604/ilya-ilford-122332-unsplash_fciwiq.jpg"
   },
   {
     make: "Giant",
@@ -127,7 +127,7 @@ bikes_attributes = [
     location: "Wembley",
     owner_id: User.all.sample.id,
     price: 5,
-    photo: "yellow.jpg"
+    remote_photo_url: "https://res.cloudinary.com/zachobbs/image/upload/v1558532580/7287272-3x2-700x467_lcoyml.jpg"
   },
   {
     make: "Focus",
@@ -136,11 +136,11 @@ bikes_attributes = [
     bike_type: "Commuter",
     description: "very small and light",
     frame_size: "small",
-    foldable: true,
+    foldable: false,
     location: "Enfield",
     owner_id: User.all.sample.id,
     price: 16,
-    photo: "black.jpg"
+    remote_photo_url: "https://res.cloudinary.com/zachobbs/image/upload/v1558532616/dallas-kwok-402163-unsplash_c89r7h.jpg"
   },
 ]
 
@@ -226,7 +226,7 @@ puts 'Finished!'
 #     last_name: "Jones",
 #     username: "DJ1",
 #     about_me: "I'm alright",
-#     photo: Cloudinary::Uploader.upload("./app/assets/images/che.jpg")
+#     remote_photo_url: Cloudinary::Uploader.upload("./app/assets/images/che.jpg")
 #   },
 #   {
 #     email: "Johnny@hotmail.com",
@@ -235,7 +235,7 @@ puts 'Finished!'
 #     last_name: "Squirmo",
 #     username: "Sandpaper",
 #     about_me: "I'm not from around here",
-#     photo: Cloudinary::Uploader.upload("./app/assets/images/jon.jpg")
+#     remote_photo_url: Cloudinary::Uploader.upload("./app/assets/images/jon.jpg")
 #   },
 #   {
 #     email: "ant@yahoo.com",
