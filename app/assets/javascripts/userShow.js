@@ -6,11 +6,11 @@ var bookings = document.querySelectorAll(".bookings-made");
 var editBtn = document.querySelector(".edit-btn");
 
 profileNav.forEach(function(li) {
-  li.addEventListener("click", function() {
-    profileNav.forEach(function() {
-      li.classList.remove("profile-active");
+  li.addEventListener("click", function(e) {
+    profileNav.forEach(function(el) {
+      el.classList.remove("profile-active");
     });
-    li.classList.add("profile-active");
+    e.currentTarget.classList.add("profile-active");
   });
 });
 
@@ -36,7 +36,7 @@ profileNav[2].addEventListener("click", function() {
   });
 });
 
-function removeDetails() {
+var removeDetails = function removeDetails() {
   myDetails.forEach(function(detail) {
     detail.style.display = "none";
   });
