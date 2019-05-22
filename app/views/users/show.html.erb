@@ -42,6 +42,9 @@
             <% end %>
           <% end %>
         </div>
+        <div class="add-btn">
+          <%= link_to "Add a bike", new_bike_path, class: "btn-yellow new-bike" %>
+        </div>
       </div>
 
       <div class="reviews my-bikes">
@@ -50,14 +53,15 @@
         <% if @reviews.size.positive? %>
           <% @reviews.each do |review| %>
             <div class="the-review">
-              <p><%= review&.stars %> Stars - <%= review&.created_at.strftime("%d-%m-%y") %></p>
+              <p><i><strong><%= review.booking.bike.make %></strong><br> <%= review&.stars %> Stars - <%= review&.created_at.strftime("%d-%m-%y") %></i></p>
               <p><%= review&.description %></p>
             </div>
           <% end %>
         <% else %>
-          <p>Yet to be reviewed!</p>
+          <div class="no-bookings-reviews">
+            <p>Yet to be reviewed!</p>
+          </div>
         <% end %>
-
       </div>
       <!-- my bikes end -->
 
@@ -74,7 +78,7 @@
             </div>
           <% end %>
         <% else %>
-          <p>You haven't rented any bikes yet!</p>
+          <p class="no-bookings-reviews">You haven't rented any bikes yet!</p>
         <% end %>
       </div>
       <!-- bookings I've made end -->
