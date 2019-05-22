@@ -20,19 +20,18 @@
   border-radius: 25px;
   padding-right: 20px;
   padding-left: 20px;
-
   margin-bottom: 15px;
-  justify-content: center;
-
   justify-content: center;
   text-decoration: none;
   // text-decoration: none;
   // font-weight: lighter;
   &:hover {
     background-color: #fffbaf;
-  } a {
+  }
+  a {
     color: black;
     &:hover {
       text-decoration: none;
+    }
+  }
 }
-}}
