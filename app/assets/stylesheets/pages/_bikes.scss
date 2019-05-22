@@ -5,18 +5,21 @@
 .map {
   height: 100vh;
   position: sticky;
-  top: 0
+  top: 56px;
+  // width: auto;
+  flex-grow: 1;
+  // z-index: -1
 }
 
 .home-flex {
-  flex-grow: 1;
-}
-
-.cards-bikes {
   display: flex;
-  justify-content: space-between;
 }
 
-.cards-bikes .card-trip {
-  margin: 16px;
+.cards-p {
+ // margin-top: 5px;
+ // z-index: -1;
 }
+
+// .cards-bikes .card-trip {
+//   margin: 16px;
+// }
