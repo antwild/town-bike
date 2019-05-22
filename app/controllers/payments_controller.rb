@@ -11,7 +11,7 @@ class PaymentsController < ApplicationController
     @payment.booking = @booking
     authorize @booking
     if @payment.save
-      redirect_to root_path
+      redirect_to user_path(@booking.rider)
     else
       render :new
     end

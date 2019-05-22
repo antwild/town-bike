@@ -10,49 +10,59 @@
 </div>
 
 
-  <h1>Create payment</h1>
-  <div class="booking-infos">
-    <div class="booking-cards">
-      <div class="booked-date">
-        <div class="booking-total">
-          <p>start date : <%= @booking.start_date.strftime("%d-%m-%y") %></p>
-              <% date = @booking.end_date - @booking.start_date %>
-             <p><%= date %></p>
-               <%= @booking.bike.price %>
-
-          <p>Total: <%= @booking.total %></p>
+<div class="container">
+<div class="booking-container" style="display: flex;">
+  <div class="booking-infos" style="padding: 5%;">
+     <h1>Create payment</h1>
+     <hr>
+    <div class="booked-date" style="">
+       <p>Start date : <%= @booking.start_date.strftime("%d-%m-%y") %></p>
+        <p>End date : <%= @booking.end_date.strftime("%d-%m-%y") %></p>
+    </div>
+    <hr>
+    <div class="booking-total-all" style="">
+       <% date = (@booking.end_date - @booking.start_date).to_i %>
+        <p>Booking cost : <%= date %> days x £<%= @booking.bike.price %> = £<%= @booking.total %></p>
+              <% deposit = 30 %>
+        <p>Bike deposit : £ <%= deposit %></p>
+        <hr>
+        <p class="booking-total"><strong>Total : £<%= (@booking.total + deposit) %></strong></p>
+    </div>
+    <%= simple_form_for([@booking, @payment]) do |f| %>
+      <%= f.submit "Checkout", id:"sweetalert", class: "btn-blue checkout-btn" %>
+    <% end %>
+  </div>
+  <div class="user-bike-container">
+    <div class="card-trip">
+      <%= cl_image_tag @booking.bike.photo %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= @booking.bike.model %> - <%= @booking.bike.make %></h2>
+          <p><%= @booking.bike.description%></p>
         </div>
+        <h2 class="card-trip-pricing">£<%= @booking.bike.price %> per day</h2>
+        <img src=<%=  %>/>
       </div>
     </div>
-      <%= simple_form_for([@booking, @payment]) do |f| %>
-      <%= f.submit "Pay" %>
-      <% end %>
-  </div>
-  <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">
-    <div class="card-trip-infos">
-      <div>
-        <h2>Title here</h2>
-        <p>The description here!</p>
-      </div>
-      <h2 class="card-trip-pricing">£9.99 per day</h2>
-      <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-    </div>
-  </div>
-
-  <div class="user-details">
+  <div class="user-details user-booking-confirm">
     <img class="avatar dropdown-toggle" id="navbarDropdown" src="user-image-pe" />
     <div class="name-bookings">
-      <p>Frederic Jonquieres</p>
+      <p> Frederic  </p>
       <p>130 bookings</p>
     </div>
-    <div class="stars">
-      <p>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="far fa-star"></i>
-      </p>
+      <div class="stars">
+        <p>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </p>
+      </div>
     </div>
   </div>
+</div>
+</div>
+
+
+

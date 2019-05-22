@@ -73,7 +73,7 @@
             <div class="card-product">
               <img src=<%= image_path "#{booking.bike.photo}" %>>
               <div class="card-product-infos">
-                <h2><%= booking.bike.make %><span> - £20<!-- <p><%#= booking.total %></p> --></span></h2> <p><%= booking.start_date %> til <%= booking.end_date %></p>
+                <h2><%= booking.bike.make %> - £<%= booking.total %></h2> <p><%= booking.start_date %> til <%= booking.end_date %></p>
               </div>
             </div>
           <% end %>
