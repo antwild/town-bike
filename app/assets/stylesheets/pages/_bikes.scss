@@ -1,0 +1,22 @@
+// .main-container {
+//   display: flex;
+// }
+
+.map {
+  height: 100vh;
+  position: sticky;
+  top: 0
+}
+
+.home-flex {
+  flex-grow: 1;
+}
+
+.cards-bikes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards-bikes .card-trip {
+  margin: 16px;
+}
