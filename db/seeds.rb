@@ -55,6 +55,13 @@ users_attributes = [
   }
 ]
 
+User.create!(users_attributes)
+puts "Users created"
+
+# array_of_ids = []
+# 5.times { array_of_ids << User.all.sample.id }
+
+
 puts 'Creating bikes...'
 bikes_attributes = [
   {
@@ -66,7 +73,7 @@ bikes_attributes = [
     frame_size: "Medium",
     foldable: false,
     location: "Camberwell",
-    owner_id: 1,
+    owner_id: User.all.sample.id,
     price: 10,
     photo: "red.jpg"
   },
@@ -79,7 +86,7 @@ bikes_attributes = [
     frame_size: "Large",
     foldable: true,
     location: "Hoxton",
-    owner_id: 2,
+    owner_id: User.all.sample.id,
     price: 8,
     photo: "green.jpg"
   },
@@ -92,7 +99,7 @@ bikes_attributes = [
     frame_size: "Medium",
     foldable: false,
     location: "Croydon",
-    owner_id: 3,
+    owner_id: User.all.sample.id,
     price: 15,
     photo: "blue.jpg"
   },
@@ -105,7 +112,7 @@ bikes_attributes = [
     frame_size: "Small",
     foldable: false,
     location: "Hounslow",
-    owner_id: 4,
+    owner_id: User.all.sample.id,
     price: 19,
     photo: "white.jpg"
   },
@@ -118,7 +125,7 @@ bikes_attributes = [
     frame_size: "Large",
     foldable: false,
     location: "Wembley",
-    owner_id: 5,
+    owner_id: User.all.sample.id,
     price: 5,
     photo: "yellow.jpg"
   },
@@ -131,73 +138,72 @@ bikes_attributes = [
     frame_size: "small",
     foldable: true,
     location: "Enfield",
-    owner_id: 5,
+    owner_id: User.all.sample.id,
     price: 16,
     photo: "black.jpg"
   },
 ]
 
+Bike.create!(bikes_attributes)
+puts "Bikes created"
+
 puts 'Creating bookings...'
 bookings_attributes = [
   {
-    bike_id: 1,
+    bike_id: Bike.all.sample.id,
     start_date: "20 May 2019",
     end_date: "22 May 2019",
-    rider_id: 3
+    rider_id: User.all.sample.id
   },
   {
-    bike_id: 4,
+    bike_id: Bike.all.sample.id,
     start_date: "10 Apr 2019",
     end_date: "01 May 2019",
-    rider_id: 2
+    rider_id: User.all.sample.id
   },
   {
-    bike_id: 5,
+    bike_id: Bike.all.sample.id,
     start_date: "03 Mar 2019",
     end_date: "13 Mar 2019",
-    rider_id: 4
+    rider_id: User.all.sample.id
   },
   {
-    bike_id: 5,
+    bike_id: Bike.all.sample.id,
     start_date: "01 Jan 2019",
     end_date: "20 Jan 2019",
-    rider_id: 1
+    rider_id: User.all.sample.id
   }
 ]
+
+Booking.create!(bookings_attributes)
+puts "Bookings created"
 
 puts 'Creating reviews...'
 reviews_attributes = [
   {
     stars: 2,
     description: "Good bike",
-    booking_id: 1
+    booking_id: Booking.all.sample.id
   },
   {
     stars: 5,
     description: "Good bike",
-    booking_id: 1
+    booking_id: Booking.all.sample.id
   },
   {
     stars: 2,
     description: "Not in great condition",
-    booking_id: 3
+    booking_id: Booking.all.sample.id
   },
   {
     stars: 5,
     description: "Great ride, thanks.",
-    booking_id: 2
+    booking_id: Booking.all.sample.id
   }
 ]
 
-User.create!(users_attributes)
-puts "Users created"
-Bike.create!(bikes_attributes)
-puts "Bikes created"
-Booking.create!(bookings_attributes)
-puts "Bookings created"
 Review.create!(reviews_attributes)
 puts "Reviews created"
-
 puts 'Finished!'
 
 # require 'faker'

@@ -1,3 +1,4 @@
+
 const profileNav = document.querySelectorAll(".profile-li");
 const myDetails = document.querySelectorAll(".my-details");
 const myBikes = document.querySelectorAll(".my-bikes");
