@@ -47,7 +47,7 @@
       <h2><%= pluralize @bike.reviews.size, "Review" %></h2>
     </div>
     Be the first to leave a review for <%= @bike.owner.username %>'s <%= @bike.bike_type %>
-    <%= render 'reviews/form', booking: @booking, review: @review %>
+      <%= render 'reviews/form', booking: @booking, review: @review %>
   <% else %>
     <div class="reviews-header" id="reviews-header">
           <div class="reviews-summary">
