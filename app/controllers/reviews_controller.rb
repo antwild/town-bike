@@ -11,11 +11,18 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.booking = Booking.find(params[:booking_id])
+    @bike = @review.booking.bike
     authorize @review
     if @review.save
-      redirect_to @review
+      respond_to do |format|
+        format.html { redirect_to bike_path(@bike) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      format.html { render :new }
+      respond_to do |format|
+        format.html { render 'bikes/show' }
+        format.js  # <-- idem
+      end
     end
   end
 
@@ -26,7 +33,7 @@ class ReviewsController < ApplicationController
     if @review.update(review_params)
       redirect_to @review
     else
-      format.html { render :edit }
+      render :edit
     end
   end
 

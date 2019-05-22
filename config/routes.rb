@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     resources :reviews, only: [:show, :new, :create, :edit, :update, :destroy]
     resources :payments, only: [:new, :create]
   end
+  resources :reviews
 end
