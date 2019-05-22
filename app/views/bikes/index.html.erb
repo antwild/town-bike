@@ -1,9 +1,7 @@
 
-<div class="container">
-  <h1>All Bikes</h1>
-  <div class="btn btn-yellow2"><%= link_to "Filters", "#" %></div>
+<div class="new-container">
   <div class="home-flex">
-    <div class="cards-pop">
+    <div class="cards-p">
       <% @bikes.each do |bike| %>
         <%= link_to bike_path(bike), style: "width: 100%" do  %>
           <div class="card-trip">
