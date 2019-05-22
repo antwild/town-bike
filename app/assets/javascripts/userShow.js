@@ -36,7 +36,7 @@ profileNav[2].addEventListener("click", function() {
   });
 });
 
-var removeDetails = function() {
+function removeDetails() {
   myDetails.forEach(function(detail) {
     detail.style.display = "none";
   });
