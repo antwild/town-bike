@@ -39,8 +39,21 @@
   margin-left: 30px;
 }
 
-.email {
-  margin-left: 60px;
+.new-bike {
+  font-size: 15px;
+  height: 45px;
+  background-color: #F2EC43;
+  color: #222326;
+  border: 1px solid #222326;
+  padding: 10px 15px;
+  border-radius: 25px;
+  margin-left: 20px;
+  transition: 0.2s;
+  &:hover {
+    background-color: #fffbaf;
+    text-decoration: none;
+    color: #222326;
+  }
 }
 
 .user-show-image {
@@ -145,6 +158,15 @@ a:hover {
   p {
     margin: 0 0 0 15px;
   }
+}
 
+.add-btn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
 
+.no-bookings-reviews {
+  text-align: center;
+  margin-top: 60px;
 }
