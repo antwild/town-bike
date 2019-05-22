@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
     @bikes = @user.bikes
     @reviews = @user.bike_reviews
-    @bookings = @user.bike_bookings
+    @bookings = @user.bookings
     authorize @user
   end
 
