@@ -4,6 +4,10 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
+  def show
+    @review = Review.new
+  end
+
   def new
     @bike_id = params[:bike_id]
     @booking = Booking.new
