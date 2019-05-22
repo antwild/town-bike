@@ -41,14 +41,14 @@
           <p><%= @booking.bike.description%></p>
         </div>
         <h2 class="card-trip-pricing">£<%= @booking.bike.price %> per day</h2>
-        <img src=<%=  %>/>
+        <%= cl_image_tag @booking.bike.owner.photo, class: "avatar" %>
       </div>
     </div>
   <div class="user-details user-booking-confirm">
-    <img class="avatar dropdown-toggle" id="navbarDropdown" src="user-image-pe" />
+    <%= cl_image_tag @booking.bike.owner.photo, class: "avatar" %>
     <div class="name-bookings">
-      <p> Frederic  </p>
-      <p>130 bookings</p>
+      <p><%= @booking.bike.owner.username %> </p>
+      <p><%= @booking.bike.bookings.size %> bookings</p>
     </div>
       <div class="stars">
         <p>

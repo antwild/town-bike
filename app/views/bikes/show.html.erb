@@ -1,13 +1,15 @@
-<h1><%= @bike.bike_type %> - <%= @bike.make %> <%= @bike.model %></h1>
+
 
 <div class="lets-book-container">
   <div class="bike-img-container">
+  <h1><%= @bike.bike_type %> - <%= @bike.make %> <%= @bike.model %></h1>
    <%= cl_image_tag @bike.photo, width: 600 %>
   </div>
   <div class="bike-info-container">
     <div class="lets-book-card">
       <div class="lets-book-header">
         <h2>Let's Ride!</h2>
+        <p>£<%= @bike.price %> per day</p>
         <% @rating[:full_stars].times do |time| %>
           <i class="fas fa-star"></i>
         <% end %>
@@ -37,8 +39,9 @@
     </div>
   </div>
 </div>
+<br><br>
 
-<div class="reviews-container">
+<div class="container col-10">
 
 <!-- new code here -->
 <div id="reviews">
