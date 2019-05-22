@@ -1,0 +1,22 @@
+<div class="review-item">
+  <div class="review-header">
+
+      <%= cl_image_tag review.booking.rider.photo, class: 'avatar' %>
+
+    <div class="review-info">
+      <h2><%= review.booking.rider.username %></h2>
+      <!-- todo - format the date into MMM YYYY -->
+      <p><%= review.created_at %></p>
+    </div>
+    <div class="review-stars">
+      <% review.stars.times do |time| %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - review.stars).times do |time| %>
+        <i class="far fa-star"></i>
+      <% end %>
+    </div>
+  </div>
+  <p><%= review.description %></p>
+</div>
+<hr>
