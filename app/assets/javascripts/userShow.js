@@ -1,9 +1,9 @@
 
-const profileNav = document.querySelectorAll(".profile-li");
-const myDetails = document.querySelectorAll(".my-details");
-const myBikes = document.querySelectorAll(".my-bikes");
-const bookings = document.querySelectorAll(".bookings-made");
-const editBtn = document.querySelector(".edit-btn");
+var profileNav = document.querySelectorAll(".profile-li");
+var myDetails = document.querySelectorAll(".my-details");
+var myBikes = document.querySelectorAll(".my-bikes");
+var bookings = document.querySelectorAll(".bookings-made");
+var editBtn = document.querySelector(".edit-btn");
 
 profileNav.forEach(li => {
   li.addEventListener("click", () => {
@@ -36,7 +36,7 @@ profileNav[2].addEventListener("click", () => {
   });
 });
 
-const removeDetails = () => {
+var removeDetails = () => {
   myDetails.forEach(detail => {
     detail.style.display = "none";
   });
