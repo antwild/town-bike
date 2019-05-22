@@ -43,11 +43,13 @@
 <!-- new code here -->
 <div id="reviews">
   <% if @bike.reviews.blank? %>
-    <h2><%= pluralize @bike.reviews.size, "Review" %></h2>
-    <%= render 'reviews/form', booking: @booking, review: @review %>
+    <div class="reviews-header" id="reviews-header">
+      <h2><%= pluralize @bike.reviews.size, "Review" %></h2>
+    </div>
     Be the first to leave a review for <%= @bike.owner.username %>'s <%= @bike.bike_type %>
+    <%= render 'reviews/form', booking: @booking, review: @review %>
   <% else %>
-    <div class="reviews-header">
+    <div class="reviews-header" id="reviews-header">
           <div class="reviews-summary">
             <h2><%= pluralize @bike.reviews.size, "Review" %></h2>
             <% @rating[:full_stars].times do |time| %>
@@ -63,9 +65,8 @@
         </div>
         <hr>
     </div>
-    <% if @booking %>
       <%= render 'reviews/form', booking: @booking, review: @review %>
-    <% end %>
+
     <% @bike.reviews.each do |review| %>
       <%= render 'reviews/show', review: review %>
     <% end %>
