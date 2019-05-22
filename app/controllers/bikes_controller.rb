@@ -5,7 +5,7 @@ class BikesController < ApplicationController
   def index
     if params[:s].blank?
       @bikes = policy_scope(Bike).order(created_at: :desc)
-      @bike_locs = Bike.where.not(latitude: nil, longitude: nil)
+      @bike_locs = @bikes.where.not(latitude: nil, longitude: nil)
       @markers = @bike_locs.map do |bike|
         {
           lat: bike.latitude,
@@ -16,7 +16,7 @@ class BikesController < ApplicationController
       @bikes.each { |bike| rating(bike) }
     else
       @bikes = policy_scope(Bike).search_by_make_and_model(params[:s])
-      @bike_locs = Bike.where.not(latitude: nil, longitude: nil)
+      @bike_locs = @bikes.where.not(latitude: nil, longitude: nil)
       @markers = @bike_locs.map do |bike|
         {
           lat: bike.latitude,
