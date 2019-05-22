@@ -11,9 +11,10 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.booking = Booking.find(params[:booking_id])
+    @bike = @review.booking.bike
     authorize @review
     if @review.save
-      redirect_to @review
+      redirect_to @bike
     else
       format.html { render :new }
     end
@@ -26,7 +27,7 @@ class ReviewsController < ApplicationController
     if @review.update(review_params)
       redirect_to @review
     else
-      format.html { render :edit }
+      render :edit
     end
   end
 

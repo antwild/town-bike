@@ -30,6 +30,8 @@ class BikesController < ApplicationController
 
   def show
     rating(@bike)
+    @booking = Booking.where(bike: @bike, rider: current_user).first
+    @review = Review.new
   end
 
   def new

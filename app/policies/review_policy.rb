@@ -10,7 +10,7 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def create?
-    user_owner_or_admin?
+    true
   end
 
   def update?
